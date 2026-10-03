@@ -9,9 +9,9 @@ const NAV_LINKS = [
   { href: "/scope", label: "Scope" },
 ];
 
-// Placeholders: swap in the real repo and Loom video URLs.
+// Loom is a placeholder until the demo video is recorded.
 const EXTERNAL_LINKS = [
-  { href: "https://github.com/", label: "GitHub" },
+  { href: "https://github.com/AmmaraKashaf/trip-extension-handler", label: "GitHub" },
   { href: "https://www.loom.com/", label: "Loom" },
 ];
 
