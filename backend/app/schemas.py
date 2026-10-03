@@ -2,14 +2,16 @@
 
 from datetime import datetime
 from decimal import Decimal
-from typing import Literal
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, PlainSerializer
 
 from app.config import MAX_EXTENSION_DAYS
 
 BookingStatus = Literal["upcoming", "active", "completed", "cancelled"]
 Decision = Literal["accept", "counter_offer", "decline"]
+# Exact Decimal math in Python, plain JSON number for the frontend.
+Money = Annotated[Decimal, PlainSerializer(float, return_type=float, when_used="json")]
 
 
 class ExtensionRequest(BaseModel):
@@ -21,7 +23,7 @@ class ExtensionDecision(BaseModel):
     requested_days: int
     approved_days: int
     new_end_at: datetime | None
-    extra_amount: Decimal
+    extra_amount: Money
     reason: str
 
 
@@ -32,14 +34,14 @@ class Booking(BaseModel):
     start_at: datetime
     end_at: datetime
     status: BookingStatus
-    total_amount: Decimal
+    total_amount: Money
 
 
 class Vehicle(BaseModel):
     id: str
     name: str
     plate: str
-    daily_rate: Decimal
+    daily_rate: Money
     bookings: list[Booking]
 
 
