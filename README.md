@@ -1,5 +1,5 @@
 # Trip Extension Handler
-
+**Live demo:** https://trip-extension-handler.vercel.app
 A renter asks to extend an active trip by N days. The backend checks whether the car is free, prices the extra days, and answers **accept**, **counter_offer**, or **decline**. The operator can then confirm and the booking is updated.
 
 Stack: Next.js (App Router, TypeScript, Tailwind) · FastAPI · Supabase (Postgres). Full spec: [Spec.md](Spec.md).
