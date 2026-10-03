@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl p-6">
       <header className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Trip Extension Handler</h1>
+        <h1 className="text-2xl font-bold">Fleet</h1>
         <button
           onClick={handleReset}
           disabled={loading}
