@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const NAV_LINKS = [
   { href: "/", label: "Fleet" },
   { href: "/how-it-works", label: "How it works" },
-  { href: "/scope", label: "Scope" },
 ];
 
 // Loom is a placeholder until the demo video is recorded.
